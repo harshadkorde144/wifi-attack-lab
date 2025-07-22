@@ -60,12 +60,12 @@
       const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
       if (!emailPattern.test(email)) {
-        alert("कृपया सही ईमेल पता दर्ज करें।");
+        alert("Please enter the correct email");
         return false;
       }
 
       if (password.length < 6) {
-        alert("पासवर्ड कम से कम 6 अक्षरों का होना चाहिए।");
+        alert("Please enter the valid password");
         return false;
       }
 
