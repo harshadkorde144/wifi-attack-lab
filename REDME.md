@@ -25,5 +25,4 @@ A **simulated WiFi security lab** project built using **Kali Linux**, **Aircrack
 
 ---
 
-## 📁 Project Structure
 
